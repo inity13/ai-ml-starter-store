@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#8b5cf6">
+  <title>Purchase Complete — ML Starter Kit</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .download-card {
+      background: var(--color-card-bg, #1e293b);
+      border: 1px solid var(--color-border, #334155);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      text-align: center;
+    }
+    .download-card h3 { margin: 0 0 0.5rem 0; color: var(--color-text, #f8fafc); }
+    .download-card p { margin: 0 0 1rem 0; color: var(--color-text-muted, #94a3b8); font-size: 0.875rem; }
+    .download-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+  </style>
+  <!-- analytics-injector-start -->
+<script defer data-domain="inity13.github.io" src="https://plausible.io/js/script.js"></script>
+<!-- analytics-injector-end -->
+</head>
+<body>
+  <main class="status-page">
+    <div class="status-card">
+      <span class="status-icon" aria-hidden="true">&#9989;</span>
+      <h1>Thank You!</h1>
+      <p>Your purchase is complete. Your product files are ready to download.</p>
+
+      <div id="download-section"></div>
+
+      <div class="next-steps">
+        <h2>Getting Started</h2>
+        <ol>
+          <li><strong>Download the files</strong> — Click the download button above.</li>
+          <li><strong>Extract the archive</strong> — Unzip the downloaded package.</li>
+          <li><strong>Read the README</strong> — Each product includes detailed setup instructions.</li>
+          <li><strong>Check manifest.json</strong> — Verify file integrity with included checksums.</li>
+        </ol>
+      </div>
+
+      <div class="status-actions" style="margin-top: 2rem;">
+        <a href="index.html" class="btn btn-secondary">Back to Store</a>
+        <a href="mailto:megafolder122122@hotmail.com" class="btn btn-secondary">Contact Support</a>
+      </div>
+
+      <p style="margin-top: 2rem; font-size: 0.875rem; color: var(--color-text-muted);">
+        A receipt has been sent to your email. Questions? <a href="mailto:megafolder122122@hotmail.com">megafolder122122@hotmail.com</a>
+      </p>
+    </div>
+  </main>
+
+  <script>
+    (function() {
+      var BASE = 'https://github.com/inity13/ml-starter-kit/releases/download/v1.0.0/';
+      var products = {
+        'mlflow-starter-kit': { name: 'MLflow Starter Kit', file: 'mlflow-starter-kit.zip', desc: 'MLflow experiment tracking setup, model registry patterns, and deployment config...' },
+        'model-serving-templates': { name: 'Model Serving Templates', file: 'model-serving-templates.zip', desc: 'FastAPI/Flask model serving endpoints, batched inference, A/B testing, and canar...' },
+        'feature-store-bootstrap': { name: 'Feature Store Bootstrap', file: 'feature-store-bootstrap.zip', desc: 'Feature store patterns using Feast, feature engineering pipelines, and offline/o...' },
+        'experiment-tracking-pack': { name: 'Experiment Tracking Pack', file: 'experiment-tracking-pack.zip', desc: 'Experiment tracking with W&B and MLflow, custom dashboards, metrics comparison, ...' },
+        'ml-pipeline-templates': { name: 'ML Pipeline Templates', file: 'ml-pipeline-templates.zip', desc: 'End-to-end ML pipelines: data ingestion, preprocessing, training, evaluation, an...' },
+        'model-validation-framework': { name: 'Model Validation Framework', file: 'model-validation-framework.zip', desc: 'Model testing, data drift detection, performance monitoring, and validation gate...' },
+        'hyperparameter-tuning-kit': { name: 'Hyperparameter Tuning Kit', file: 'hyperparameter-tuning-kit.zip', desc: 'Optuna/Ray Tune configs, search space definitions, pruning strategies, and distr...' },
+        'ml-data-versioning': { name: 'ML Data Versioning', file: 'ml-data-versioning.zip', desc: 'DVC setup, data pipeline versioning, experiment reproducibility, and artifact ma...' },
+        'gpu-training-toolkit': { name: 'GPU Training Toolkit', file: 'gpu-training-toolkit.zip', desc: 'Multi-GPU training configs, mixed precision training, distributed training, and ...' },
+        'ml-monitoring-suite': { name: 'ML Monitoring Suite', file: 'ml-monitoring-suite.zip', desc: 'Model monitoring dashboards, alert configurations, data quality checks, and perf...' },
+        'ml-starter-complete-bundle': { name: 'ML Starter Bundle', file: 'ml-starter-complete-bundle.zip', desc: 'All 10 ML Starter Kit products. Complete toolkit for production ML....' }
+      };
+
+      var params = new URLSearchParams(window.location.search);
+      var productSlug = params.get('product');
+      var section = document.getElementById('download-section');
+
+      if (productSlug && products[productSlug]) {
+        var p = products[productSlug];
+        section.innerHTML = '<div class="download-card">' +
+          '<h3>' + p.name + '</h3>' +
+          '<p>' + p.desc + '</p>' +
+          '<a href="' + BASE + p.file + '" class="btn btn-primary btn-lg" download>Download ' + p.file + '</a>' +
+          '</div>';
+      } else {
+        section.innerHTML = '<div class="download-card">' +
+          '<h3>Download Your Product</h3>' +
+          '<p>Check your email for the download link, or contact support.</p>' +
+          '</div>';
+      }
+    })();
+  </script>
+<!-- analytics-start -->
+<script>
+(function(){
+  try{
+    fetch("https://ferovwapilhcpqozqinn.supabase.co/rest/v1/page_views",{
+      method:"POST",
+      headers:{"Content-Type":"application/json","apikey":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZlcm92d2FwaWxoY3Bxb3pxaW5uIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMwMTU3NTYsImV4cCI6MjA4ODU5MTc1Nn0.RhBBxPaAw5Fyzal5m3GY_sdxiIAp_RVJ_ki8CUgPnRY","Authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZlcm92d2FwaWxoY3Bxb3pxaW5uIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMwMTU3NTYsImV4cCI6MjA4ODU5MTc1Nn0.RhBBxPaAw5Fyzal5m3GY_sdxiIAp_RVJ_ki8CUgPnRY","Prefer":"return=minimal"},
+      body:JSON.stringify({store_name:"ML Starter Kit",page_path:location.pathname,referrer:document.referrer||null,user_agent:navigator.userAgent}),
+      keepalive:true
+    }).catch(function(){});
+  }catch(e){}
+})();
+</script>
+<!-- analytics-end -->
+</body>
+</html>
