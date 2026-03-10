@@ -845,6 +845,14 @@ code, pre {
   vertical-align: super;
 }
 
+.product-trust-line {
+  margin-top: var(--space-3);
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  text-align: center;
+  letter-spacing: 0.01em;
+}
+
 /* ==========================================================================
    Featured Product Section
    ========================================================================== */
